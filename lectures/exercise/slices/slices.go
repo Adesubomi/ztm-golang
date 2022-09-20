@@ -18,5 +18,27 @@ import "fmt"
 
 type Part string
 
+func printStats(parts []Part) {
+	fmt.Printf("\nAssembly line with %v parts\n", len(parts))
+
+	for i := 0; i < len(parts); i++ {
+		fmt.Println("Part", i+1, ":", parts[i])
+	}
+}
+
 func main() {
+	//  - Create an assembly line having any three parts
+	assemplyLine := []Part{"Late", "Press", "Paint Shop"}
+	printStats(assemplyLine)
+
+	//  - Add two new parts to the line
+	assemplyLine = append(assemplyLine, "Logs", "Packaging")
+	printStats(assemplyLine)
+
+	//  - Slice the assembly line so it contains only the two new parts
+	slice := assemplyLine[len(assemplyLine)-2:]
+	printStats(slice)
+
+	//  - Print out the contents of the assembly line at each step
+	fmt.Printf("\n")
 }
