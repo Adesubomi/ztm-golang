@@ -43,10 +43,10 @@ func (sL ShoppingList) printStat() {
 }
 
 func main() {
-	var shoppingList ShoppingList
-	shoppingList[0] = Product{name: "Cassava", price: 13.99}
-	shoppingList[1] = Product{name: "Garri", price: 14.99}
-	shoppingList[2] = Product{name: "Ewa", price: 22.99}
+	shoppingList := ShoppingList{
+		Product{name: "Cassava", price: 13.99},
+		Product{name: "Garri", price: 14.99},
+		Product{name: "Ewa", price: 22.99}}
 	shoppingList.printStat()
 
 	fmt.Println(" - - - Adding one more item - - ")
