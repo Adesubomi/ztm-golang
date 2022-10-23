@@ -16,6 +16,29 @@ package main
 
 import "fmt"
 
+type Operation byte
+
+const (
+	add Operation = iota
+	sub
+	mul
+	div
+)
+
+func (o Operation) calculate(operator float64, operand float64) float64 {
+	if o == add {
+		return operator + operand
+	} else if o == sub {
+		return operator - operand
+	} else if o == mul {
+		return operator * operand
+	} else if o == div {
+		return operator / operand
+	}
+
+	return 0
+}
+
 func main() {
 	fmt.Println(add.calculate(2, 2)) // = 4
 
